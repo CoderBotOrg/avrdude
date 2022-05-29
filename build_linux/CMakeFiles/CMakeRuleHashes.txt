@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+b5ca0626fe5c7cb91e26b018f28ede03 config_gram.c
+76109fea85bcd9332cf97efb49f26a81 lexer.c

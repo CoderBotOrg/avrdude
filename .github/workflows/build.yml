@@ -1,0 +1,75 @@
+#
+# build.yml - GitHub build action for AVRDUDE
+# Copyright (C) 2021 Marius Greuel
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+
+name: Build
+
+on:
+  push:
+    branches-ignore:
+      - 'onlinedocs'
+  pull_request:
+    branches-ignore:
+      - 'onlinedocs'
+  workflow_call:
+
+env:
+  BUILD_TYPE: RelWithDebInfo
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    container: debian:11
+    strategy:
+      matrix:
+        include:
+          - { arch: armhf, processor: armhf, prefix: arm-linux-gnueabihf, inc-lib: arm-linux-gnueabihf }
+          - { arch: arm64, processor: aarch64, prefix: aarch64-linux-gnu, inc-lib: aarch64-linux-gnu }
+    steps:
+      - uses: actions/checkout@v2
+      - name: Add architecture
+        run: |
+          dpkg --add-architecture ${{matrix.arch}}
+          apt-get update
+      - name: Install prerequisites
+        run: >-
+          apt-get install -y
+          git
+          cmake
+          flex
+          bison
+          crossbuild-essential-${{matrix.arch}}
+          libelf-dev:${{matrix.arch}}
+          libusb-dev:${{matrix.arch}}
+          libusb-1.0-0-dev:${{matrix.arch}}
+          libhidapi-dev:${{matrix.arch}}
+          libftdi1-dev:${{matrix.arch}}
+      - name: Configure
+        run: >-
+        ./bootstrap
+        ./configure --enable-linuxspi
+      - name: Build
+        run: make	
+      - name: Archive executables
+        uses: actions/upload-artifact@v2
+        with:
+          name: avrdude-linux-${{matrix.processor}}
+          path: |
+            avrdude
+            avrdude.conf
+
+          

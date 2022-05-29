@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/avrdude.dir/main.c.o CMakeFiles/avrdude.dir/term.c.o CMakeFiles/avrdude.dir/whereami.c.o -o avrdude  libavrdude.a -lm /usr/lib/arm-linux-gnueabihf/libelf.so -lusb /usr/lib/arm-linux-gnueabihf/libusb-1.0.so /usr/lib/arm-linux-gnueabihf/libhidapi-libusb.so /usr/lib/arm-linux-gnueabihf/libftdi1.so 

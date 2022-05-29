@@ -1,0 +1,14 @@
+/home/pi/avrdude/build_linux/CMakeFiles/install/strip.dir
+/home/pi/avrdude/build_linux/CMakeFiles/install.dir
+/home/pi/avrdude/build_linux/CMakeFiles/list_install_components.dir
+/home/pi/avrdude/build_linux/CMakeFiles/install/local.dir
+/home/pi/avrdude/build_linux/CMakeFiles/rebuild_cache.dir
+/home/pi/avrdude/build_linux/CMakeFiles/edit_cache.dir
+/home/pi/avrdude/build_linux/src/CMakeFiles/install/strip.dir
+/home/pi/avrdude/build_linux/src/CMakeFiles/list_install_components.dir
+/home/pi/avrdude/build_linux/src/CMakeFiles/install/local.dir
+/home/pi/avrdude/build_linux/src/CMakeFiles/rebuild_cache.dir
+/home/pi/avrdude/build_linux/src/CMakeFiles/edit_cache.dir
+/home/pi/avrdude/build_linux/src/CMakeFiles/install.dir
+/home/pi/avrdude/build_linux/src/CMakeFiles/avrdude.dir
+/home/pi/avrdude/build_linux/src/CMakeFiles/libavrdude.dir

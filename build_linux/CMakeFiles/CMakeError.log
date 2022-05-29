@@ -1,0 +1,51 @@
+Determining if the include file libelf/libelf.h exists failed with the following output:
+Change Dir: /home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_ea68b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ea68b.dir/build.make CMakeFiles/cmTC_ea68b.dir/build
+gmake[1]: Entering directory '/home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ea68b.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_ea68b.dir/CheckIncludeFile.c.o -c /home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: libelf/libelf.h: No such file or directory
+    1 | #include <libelf/libelf.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_ea68b.dir/build.make:85: CMakeFiles/cmTC_ea68b.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_ea68b/fast] Error 2
+
+
+
+Determining if the include file lusb0_usb.h exists failed with the following output:
+Change Dir: /home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_30583/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_30583.dir/build.make CMakeFiles/cmTC_30583.dir/build
+gmake[1]: Entering directory '/home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_30583.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_30583.dir/CheckIncludeFile.c.o -c /home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: lusb0_usb.h: No such file or directory
+    1 | #include <lusb0_usb.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_30583.dir/build.make:85: CMakeFiles/cmTC_30583.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_30583/fast] Error 2
+
+
+
+Determining if the include file libusb.h exists failed with the following output:
+Change Dir: /home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_fd195/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fd195.dir/build.make CMakeFiles/cmTC_fd195.dir/build
+gmake[1]: Entering directory '/home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fd195.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_fd195.dir/CheckIncludeFile.c.o -c /home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: libusb.h: No such file or directory
+    1 | #include <libusb.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_fd195.dir/build.make:85: CMakeFiles/cmTC_fd195.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/pi/avrdude/build_linux/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_fd195/fast] Error 2
+
+
+
