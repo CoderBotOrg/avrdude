@@ -60,8 +60,8 @@ jobs:
           libftdi1-dev:${{matrix.arch}}
       - name: Configure
         run: >-
-        ./bootstrap
-        ./configure --enable-linuxspi
+          ./bootstrap
+          ./configure --enable-linuxspi
       - name: Build
         run: make	
       - name: Archive executables
