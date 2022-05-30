@@ -6,6 +6,10 @@ jobs:
       image: ubuntu-2004:current
     resource_class: arm.medium
     steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies
       - run: sudo apt-get update
       - run: sudo apt-get install -y build-essential libtool
       - run: ls -l
