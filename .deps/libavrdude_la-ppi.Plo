@@ -1,3 +1,0 @@
-libavrdude_la-ppi.lo: ppi.c /usr/include/stdc-predef.h ac_cfg.h
-/usr/include/stdc-predef.h:
-ac_cfg.h:
