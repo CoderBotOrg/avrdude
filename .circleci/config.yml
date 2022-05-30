@@ -6,8 +6,8 @@ jobs:
       image: ubuntu-2004:current
     resource_class: arm.medium
     steps:
-      - run: apt-get update
-      - run: apt-get install -y build-essential libtool
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y build-essential libtool
       - run: ./bootstrap
       - run: ./configure --enable-linuxspi
       - run: make	        
