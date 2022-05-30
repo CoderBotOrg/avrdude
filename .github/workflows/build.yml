@@ -30,6 +30,57 @@ on:
 env:
   BUILD_TYPE: RelWithDebInfo
 
+  linux:
+    runs-on: ubuntu-latest
+    container: debian:11
+    strategy:
+      matrix:
+        include:
+          - { arch: i386, processor: i686, prefix: i686-linux-gnu, inc-lib: i386-linux-gnu }
+          - { arch: armhf, processor: armhf, prefix: arm-linux-gnueabihf, inc-lib: arm-linux-gnueabihf }
+          - { arch: arm64, processor: aarch64, prefix: aarch64-linux-gnu, inc-lib: aarch64-linux-gnu }
+    steps:
+      - uses: actions/checkout@v2
+      - name: Add architecture
+        run: |
+          dpkg --add-architecture ${{matrix.arch}}
+          apt-get update
+      - name: Install prerequisites
+        run: >-
+          apt-get install -y
+          git
+          cmake
+          flex
+          bison
+          crossbuild-essential-${{matrix.arch}}
+          libelf-dev:${{matrix.arch}}
+          libusb-dev:${{matrix.arch}}
+          libusb-1.0-0-dev:${{matrix.arch}}
+          libhidapi-dev:${{matrix.arch}}
+          libftdi1-dev:${{matrix.arch}}
+      - name: Configure
+        run: >-
+          ./bootstrap
+          ./configure --enable-linuxspi
+      - name: Build
+        run: make
+      - name: Archive build artifacts
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-linux-${{matrix.processor}}
+          path: |
+            build/
+            !**/*.d
+            !**/*.o
+      - name: Archive executables
+        uses: actions/upload-artifact@v2
+        with:
+          name: avrdude-linux-${{matrix.processor}}
+          path: |
+            build/src/avrdude
+            build/src/avrdude.conf
+
 jobs:
   linux:
     runs-on: ubuntu-latest
