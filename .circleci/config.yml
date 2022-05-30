@@ -1,1 +1,22 @@
+version: 2.1
 
+jobs:
+  build-medium:
+    machine:
+      image: ubuntu-2004:current
+    resource_class: arm.medium
+    steps:
+      - run:
+        - apt-get update
+        - apt-get install -y build-essential libtool
+      - run: 
+        - ./bootstrap
+        - ./configure --enable-linuxspi
+      - run: make	        
+      - run: echo "Hello, Arm!"
+
+
+workflows:
+  build:
+    jobs:
+      - build-medium
