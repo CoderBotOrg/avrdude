@@ -29,16 +29,13 @@ on:
 
 env:
   BUILD_TYPE: RelWithDebInfo
-
   linux:
     runs-on: ubuntu-latest
     container: debian:11
     strategy:
       matrix:
         include:
-          - { arch: i386, processor: i686, prefix: i686-linux-gnu, inc-lib: i386-linux-gnu }
           - { arch: armhf, processor: armhf, prefix: arm-linux-gnueabihf, inc-lib: arm-linux-gnueabihf }
-          - { arch: arm64, processor: aarch64, prefix: aarch64-linux-gnu, inc-lib: aarch64-linux-gnu }
     steps:
       - uses: actions/checkout@v2
       - name: Add architecture
