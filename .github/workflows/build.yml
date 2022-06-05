@@ -61,7 +61,7 @@ jobs:
         with:
           name: build-linux-${{matrix.processor}}
           path: |
-            build/
+            build_linux/
             !**/*.d
             !**/*.o
       - name: Archive executables
@@ -69,5 +69,5 @@ jobs:
         with:
           name: avrdude-linux-${{matrix.processor}}
           path: |
-            build/src/avrdude
-            build/src/avrdude.conf
+            build_linux/src/avrdude
+            build_linux/src/avrdude.conf
